@@ -13,7 +13,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage('build') {
+        stage('Build Stage') {
             steps {
                 echo "Installing Python"
                 sh 'sudo su'
