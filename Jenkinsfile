@@ -20,14 +20,15 @@ pipeline {
                 sh 'sudo yum install python3'
                 echo "Create and enter virtual environment"
                 sh 'sudo yum install python-virtualenv'
+                echo "Perform unit test"
+        		sh 'virtualenv myvirtualenv'
+                sh 'source myvirtualenv/bin/activate'
+                sh 'python3 -m CalcTest.test'
             }
         }
         stage('unit test') {
         	steps {
-        		echo "Perform unit test"
-        		sh 'virtualenv myvirtualenv'
-                sh 'source myvirtualenv/bin/activate'
-                sh 'python3 -m CalcTest.test'
+        		
         	}
         }
         
