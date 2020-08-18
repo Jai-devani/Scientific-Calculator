@@ -21,7 +21,9 @@ pipeline {
                 sh 'sudo yum install python-virtualenv'
         		sh 'virtualenv myvirtualenv'
                 sh 'source myvirtualenv/bin/activate'
+                echo "Installing python and other essentials."
                 sh 'sudo yum install python3'
+                echo "Do unit test."
                 sh 'python3 -m CalcTest.test'
             }
         }        
