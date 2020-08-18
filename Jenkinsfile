@@ -25,12 +25,6 @@ pipeline {
                 sh 'source myvirtualenv/bin/activate'
                 sh 'python3 -m CalcTest.test'
             }
-        }
-        stage('unit test') {
-        	steps {
-        		
-        	}
-        }
-        
+        }        
     }
 }
