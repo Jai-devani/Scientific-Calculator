@@ -31,7 +31,7 @@ pipeline {
 			steps {
 				sh "sudo scp -i  '$WORKSPACE/20969-JD.pem' -o StrictHostKeyChecking=no -r calculator_main.py ec2-user@54.167.186.73:/home/ec2-user"
 				sh "sudo scp -i  '$WORKSPACE/20969-JD.pem' -o StrictHostKeyChecking=no -r calculator_test.py ec2-user@54.167.186.73:/home/ec2-user" 
-				sh '''sudo ssh -i "20969-JD.pem" ec2-user@ec2-54-167-186-73.compute-1.amazonaws.com
+				sh '''sudo ssh -i "20969-JD.pem" -o StrictHostKeyChecking=no ec2-user@ec2-54-167-186-73.compute-1.amazonaws.com
 				echo "Hello world" 
 				sudo yum install python3
 				sudo yum install python-virtualenv
