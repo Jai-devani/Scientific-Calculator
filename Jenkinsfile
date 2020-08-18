@@ -15,15 +15,13 @@ pipeline {
         }
         stage('Build Stage') {
             steps {
-                echo "Installing Python"
                 sh 'sudo su'
                 sh 'sudo yum update'
-                sh 'sudo yum install python3'
                 echo "Create and enter virtual environment"
                 sh 'sudo yum install python-virtualenv'
-                echo "Perform unit test"
         		sh 'virtualenv myvirtualenv'
                 sh 'source myvirtualenv/bin/activate'
+                sh 'sudo yum install python3'
                 sh 'python3 -m CalcTest.test'
             }
         }        
