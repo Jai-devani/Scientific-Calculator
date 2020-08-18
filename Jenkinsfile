@@ -17,12 +17,12 @@ pipeline {
             steps {
                 sh 'sudo su'
                 sh 'sudo yum update -y'
+                echo "Installing python and other essentials."
+                sh 'sudo yum install python3 -y'
                 echo "Create and enter virtual environment"
-                sh 'sudo yum install python-virtualenv'
+                sh 'sudo yum install python-virtualenv -y'
         		sh 'virtualenv myvirtualenv'
                 sh 'source myvirtualenv/bin/activate'
-                echo "Installing python and other essentials."
-                sh 'sudo yum install python3'
                 echo "Do unit test."
                 sh 'python3 -m CalcTest.test'
             }
