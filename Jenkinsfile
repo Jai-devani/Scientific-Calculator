@@ -16,7 +16,7 @@ pipeline {
         stage('Build Stage') {
             steps {
                 sh 'sudo su'
-                sh 'sudo yum update'
+                sh 'sudo yum update -y'
                 echo "Create and enter virtual environment"
                 sh 'sudo yum install python-virtualenv'
         		sh 'virtualenv myvirtualenv'
