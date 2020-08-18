@@ -33,7 +33,7 @@ class Test(unittest.TestCase):
 
     def test_power(self):
         assert 729.0 == calculator.power(9, 3)
-
+        
     def test_modulus(self):
         assert 1.0 == calculator.modulus(4, 3)
 
@@ -50,3 +50,6 @@ class Test(unittest.TestCase):
         assert 1.58 == calculator.log(3, 2)
         assert "The arguments provided are invalid." == calculator.log(10, 0)
         assert "The arguments provided are invalid." == calculator.log(0, 10)
+        
+    if __name__ == '__main__':
+        unittest.main()
