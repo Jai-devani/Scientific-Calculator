@@ -24,7 +24,7 @@ pipeline {
         		sh 'virtualenv myvirtualenv'
                 sh 'source myvirtualenv/bin/activate'
                 echo "Do unit test."
-                sh 'python3 -m CalcTest.test'
+                sh 'python3 -m calculator_test.test'
             }
         }        
     }
