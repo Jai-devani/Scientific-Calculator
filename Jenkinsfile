@@ -23,6 +23,11 @@ pipeline {
 				sh 'source myvirtualenv/bin/activate'
 				echo 'Installing python and other packages'
 				sh 'sudo yum install python3'
+				
+			}
+		}
+		stage ('Test Stage') {
+			steps {
 				echo 'Running the unit test case file'
 				sh 'python calculator_test.py'
 			}
